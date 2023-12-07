@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define yes "YES"
+#define no "NO"
+#define For(i,n) for(int i=0;i<n;i++)
+#define Foreq(i,n) for(int i=0;i<=n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    ll t,n,x;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>x;
+        ll arr[n],i=0,maximum,j,flag=1,y;
+        For(i,n)
+        {
+            cin>>arr[i];
+            if(arr[i]>x)
+            {
+                j=i;
+                flag=0;
+            }
+        }
+        i=0;
+        if(flag)
+        {
+            maximum=arr[0]-0;
+            For(i,n-1)
+            {
+                maximum= max(maximum,(arr[i+1]-arr[i]));
+            }
+            y=(x-arr[n-1])*2;
+            maximum= max(maximum,y);
+            cout<<maximum br;
+        }
+        else
+        {
+            maximum=arr[0]-0;
+            For(i,j-1)
+            {
+                maximum= max(maximum,(arr[i+1]-arr[i]));
+            }
+            y=(x-arr[j-1])*2;
+            maximum= max(maximum,y);
+            cout<<maximum br;
+        }
+
+    }
+}
