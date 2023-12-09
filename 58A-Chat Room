@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#include<string.h>
+#define ll long long int
+#define br <<"\n";
+#define yes "YES"
+#define no "NO"
+#define For(i,n) for(int i=0;i<n;i++)
+#define Forran(i,n,a) for(int i=n;i<a;i++)
+#define Forrev(i,n) for(int i = n-1; i >= 0; i--)
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int n,i=0,h=111,e=111,l1=111,l2=111,o=111;
+    char flag='n';
+    n=s.length();
+    if(n<5)
+    {
+        cout<<no br;
+        return 0;
+    }
+    For(i,n){
+        if(s[i]=='h'&&flag=='n')
+        {
+            flag='h';
+        }
+        if(s[i]=='e'&&flag=='h')
+        {
+            flag='e';
+        }
+        if((s[i]=='l'&&flag=='e')||(s[i]=='l'&&flag=='1'))
+        {
+            if(flag=='e')
+            {
+                flag='1';
+            }
+            else
+            {
+                flag='2';
+            }
+        }
+        else if(s[i]=='o'&&flag=='2')
+        {
+            flag='y';
+        }
+    }
+    if(flag=='y')
+    {
+        cout<<yes br;
+    }
+    else
+    {
+        cout<<no br;
+    }
+    return 0;
+}
