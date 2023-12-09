@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t)
+    {
+        char ch,j;
+        cin>>ch;
+        int n,i;
+        cin>>n;
+        for(i=1;i<=8;i++)
+        {
+            if(i!=n)
+            {
+                cout<<ch<<i<<endl;
+            }
+        }
+        for(j='a';j<='h';j++)
+        {
+            if(j!=ch)
+            {
+                cout<<j<<n<<endl;
+            }
+        }
+        t--;
+    }
+}
